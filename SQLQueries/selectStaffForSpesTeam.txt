@@ -1,0 +1,17 @@
+SELECT [PID]
+      ,[Name]
+      ,[Grade]
+      ,[WorkPatternId]
+      ,[FTEEquivalent]
+      ,[StartDate]
+      ,[EndDate]
+      ,[Historical]
+      ,[Office]
+  FROM [CorporateTreasuryMis_107821].[dbo].[Staff]
+  WHERE [PID] not in 
+
+(SELECT [PID]
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamsStructure]
+  WHERE (GetDate() between [StartDate] and [EndDate] and [TeamId] = 12))
+
+

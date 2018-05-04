@@ -1,0 +1,8 @@
+SELECT datepart(ww, WorkDate), SUM([Items]) AS [Total Items]
+  FROM [CorporateTreasuryMis_107821].[dbo].[IncomingWorkloadWarehouse]
+  WHERE ([WorkDate] between '2017-05-01' AND '2017-05-31')
+  GROUP BY datepart(ww, [WorkDate])
+
+Using the datepart(function)
+
+

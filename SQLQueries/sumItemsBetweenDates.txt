@@ -1,0 +1,10 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+DECLARE @fromworkdate nchar(8) = '20170801'
+DECLARE @tooworkdate nchar(8) = '20170831'
+SELECT TOP 1000 [WorkStream]
+      ,SUM([Items]) AS [TotalItems]
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamIncomingWorkload]
+  WHERE [WorkDate] between @fromworkdate AND @tooworkdate
+  GROUP BY [Workstream]
+
+

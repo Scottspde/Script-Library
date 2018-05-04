@@ -1,0 +1,7 @@
+SELECT	SUM([Items]) AS [Total Items]
+  FROM [CorporateTreasuryMis_107821].[dbo].[IncomingWorkloadWarehouse]
+  WHERE [WorkStream] = 'Cust Acc Maintenance' AND ([Workdate] between '2017-05-01' AND '2017-05-31')
+
+Gives the exact figure for the months as a total.
+
+

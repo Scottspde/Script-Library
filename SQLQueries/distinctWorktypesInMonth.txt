@@ -1,0 +1,9 @@
+SELECT DISTINCT 
+	  [Worktype]
+  FROM [CorporateTreasuryMis_107821].[dbo].[IncomingWorkloadWarehouse]
+  WHERE [WorkDate] between '2017-05-01' AND '2017-05-31'
+  ORDER BY [Worktype]
+
+List of Worktypes in May, list each worktype once and in alphabetical order.
+
+

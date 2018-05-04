@@ -1,0 +1,40 @@
+USE [CorporateTreasuryMis_107821]
+GO
+
+SELECT [PID]
+      ,[Name]
+      ,[Grade]
+      ,[WorkPatternId]
+      ,[FTEEquivalent]
+      ,[StartDate]
+      ,[EndDate]
+      ,[Historical]
+      ,[Office]
+  FROM [CorporateTreasuryMis_107821].[dbo].[Staff]
+  WHERE [PID] in 
+
+(SELECT [PID]
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamsStructure]
+  WHERE (GetDate() between [StartDate] and [EndDate] and [TeamId] = 12))
+
+  UNION
+
+  SELECT [PID]
+      ,[Name]
+      ,[Grade]
+      ,[WorkPatternId]
+      ,[FTEEquivalent]
+      ,[StartDate]
+      ,[EndDate]
+      ,[Historical]
+      ,[Office]
+  FROM [CorporateTreasuryMis_107821].[dbo].[Staff]
+  WHERE [PID] in 
+
+  (SELECT [PID]
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamsStructure]
+  WHERE (GetDate() between [StartDate] and [EndDate] and [TeamId] = 10))
+
+Example of a UNION
+
+

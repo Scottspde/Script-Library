@@ -1,0 +1,25 @@
+First Where Clause
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP 1000 [WorkDate]
+      ,[Grade]
+      ,[UnitId]
+      ,[UnitName]
+      ,[GroupId]
+      ,[GroupName]
+      ,[WorkTypeId]
+      ,[WorkType]
+      ,[Workstream]
+      ,[HeadOfDuty]
+      ,[WorkPattern]
+      ,[FTEquivalent]
+      ,[NonWorkResource]
+      ,[AlternativeEntryType]
+      ,[CountOfInstances]
+      ,[Duration]
+      ,[Clearance]
+      ,[WorkPatternId]
+  FROM [CorporateTreasuryMis_107821].[dbo].[UnitWorkWarehouse]
+  WHERE [UnitName] = 'EPU2' AND [Grade] = 'AO'
+
+

@@ -1,0 +1,16 @@
+SELECT TOP 1000 [PID]
+      ,[Name]
+      ,[Grade]
+      ,[WorkPatternId]
+      ,[FTEEquivalent]
+      ,[StartDate]
+      ,[EndDate]
+      ,[Historical]
+      ,[Office]
+  FROM [CorporateTreasuryMis_107821].[dbo].[Staff]
+  WHERE [Historical] != 1
+  ORDER BY [Grade], [FTEEquivalent], [Name]
+
+List of all current non historical staff ordered by Grade, FTE, Name. 
+
+

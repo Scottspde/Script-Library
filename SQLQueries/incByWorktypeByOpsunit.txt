@@ -1,0 +1,12 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP 1000 [WorkDate]
+      ,[Workstream]
+      ,[BUCWorkstream]
+      ,[Unit]
+      ,[GroupName]
+      ,[IncomingItems]
+      ,[IncomingValue]
+  FROM [CorporateTreasuryMis_107821].[dbo].[WeeklyMISByWorkstreamWareHouse]
+  WHERE [Unit] = 'CAT' AND [BUCWorkstream] = 'Unallocated' AND [GroupName] = 'Ops1' AND [IncomingItems] <> 0
+
+

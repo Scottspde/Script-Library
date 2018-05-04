@@ -1,0 +1,12 @@
+SELECT Distinct 
+		dbo.Staff.Name,
+		dbo.IndividualWorkWarehouse.PID, 
+		dbo.IndividualWorkWarehouse.WorkType,
+		dbo.IndividualWorkWarehouse.Clearance
+FROM   dbo.Staff INNER JOIN
+           dbo.IndividualWorkWarehouse ON dbo.Staff.PID = dbo.IndividualWorkWarehouse.PID
+WHERE dbo.Staff.Name = 'Scott Speedie'
+
+Select PID and Clearances for a specific member of staff
+
+

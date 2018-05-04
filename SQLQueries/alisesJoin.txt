@@ -1,0 +1,9 @@
+select ts.pid, s.Name, t.TeamName
+from [dbo].[Staff] as s
+inner join [dbo].[TeamsStructure] as ts
+on s.pid = ts.pid
+inner join [dbo].[Teams] as t
+on ts.TeamId = t.TeamId
+where (getdate() between ts.startDate and ts.enddate and ts.TeamId = 12) 
+
+

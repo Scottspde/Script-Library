@@ -1,0 +1,19 @@
+DECLARE @workdate nchar(8) = '20170804'
+SELECT TOP 1000 [WorkDate]
+      ,[TeamId]
+      ,[Team]
+      ,[UnitId]
+      ,[Unit]
+      ,[WorktypeId]
+      ,[Worktype]
+      ,[Workstream]
+      ,[HOD]
+      ,[Items]
+      ,[Value]
+
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamIncomingWorkload]
+  WHERE workdate = @workdate
+
+Declaring varaibles
+
+

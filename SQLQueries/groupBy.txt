@@ -1,0 +1,9 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT [WorkDate], [Unit], [Workstream], SUM([Items]) AS [Total Item per Day]
+  FROM [CorporateTreasuryMis_107821].[dbo].[IncomingWorkloadWarehouse]
+  WHERE [WorkStream] = 'Cust Acc Maintenance' AND [Unit] = 'EPU2' AND [Workdate] < '2017-05-01'
+  GROUP BY [WorkDate], [Unit], [Workstream]
+
+Total of Customer Account Maintenance per day for 1 month.
+
+

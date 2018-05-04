@@ -1,0 +1,22 @@
+****** Script for SelectTopNRows command from SSMS  ******/
+DECLARE @fromworkdate nchar(8) = '20170801'
+DECLARE @tooworkdate nchar(8) = '20170831'
+DECLARE @worktypename nvarchar(10) = ''
+SELECT TOP 1000 [WorkDate]
+      ,[TeamId]
+      ,[Team]
+      ,[UnitId]
+      ,[Unit]
+      ,[WorktypeId]
+      ,[Worktype]
+      ,[Workstream]
+      ,[HOD]
+      ,[Items]
+      ,[Value]
+
+  FROM [CorporateTreasuryMis_107821].[dbo].[TeamIncomingWorkload]
+  WHERE [Workstream] not LIKE 'Unallocated Over' AND [Workstream] not LIKE 'Acc. Ex.' AND ([WorkDate] between @fromworkdate AND @tooworkdate)
+
+Looking for everything between two dates.
+
+

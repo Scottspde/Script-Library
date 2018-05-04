@@ -1,0 +1,8 @@
+SELECT [WorkDate], [Workstream], SUM([Items]) AS [Total Items]
+  FROM [CorporateTreasuryMis_107821].[dbo].[IncomingWorkloadWarehouse]
+  WHERE [WorkStream] = 'Cust Acc Maintenance' AND ([Workdate] between '2017-05-01' AND '2017-05-31')
+  GROUP BY [WorkDate], [Workstream]
+
+Do a SUM of all Customer Account Maintenance items for the month of May. 
+
+

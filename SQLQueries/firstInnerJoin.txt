@@ -1,0 +1,10 @@
+SELECT  dbo.Staff.PID, dbo.Staff.Name, dbo.TeamsStructure.TeamId
+FROM   dbo.Staff INNER JOIN
+           dbo.TeamsStructure ON dbo.Staff.PID = dbo.TeamsStructure.PID
+		   WHERE dbo.Staff.Historical != 1 
+		   AND (GetDate() between dbo.TeamsStructure.StartDate AND dbo.TeamsStructure.EndDate)
+		   AND dbo.TeamsStructure.TeamId = 2
+
+My "First" join ... in HMRC
+
+
